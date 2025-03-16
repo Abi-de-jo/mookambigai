@@ -1,7 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { parse } from 'date-fns';
-import bcrypt from 'bcryptjs';
-import { sendEmail } from '../utils/emailService.js';
+ import { sendEmail } from '../utils/emailService.js';
 import { sendSMS } from '../utils/smsService.js';
 
 const prisma = new PrismaClient();
