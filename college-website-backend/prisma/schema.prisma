@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Student {
+  id        String   @id @default(uuid()) @map("_id")
+  name      String
+  email     String  @unique
+  password  String
+  phone     String?  
+  department  String
+  year      Int
+  semester  Int
+  createdAt DateTime @default(now())
+  appointments Appointment[]
+}
+
+model Teacher {
+  id        String   @id @default(uuid()) @map("_id")
+  name      String
+  year      Int
+  phone     String?  
+
+  semester  Int
+  email     String  @unique
+  password  String
+  department  String
+
+  subjects  String[]
+  createdAt DateTime @default(now())
+  appointments Appointment[]
+}
+
+model HOD {
+  id        String   @id @default(uuid()) @map("_id")
+  name      String
+  email     String  @unique
+  password  String
+  department String
+  createdAt DateTime @default(now())
+}
+
+model Admin {
+  id        String   @id @default(uuid()) @map("_id")
+  name      String
+  email     String  @unique
+  password  String
+  createdAt DateTime @default(now())
+}
+
+model Appointment {
+  id        String   @id @default(uuid()) @map("_id")
+  studentId String
+  student   Student  @relation(fields: [studentId], references: [id])
+  teacherId String
+  teacher   Teacher  @relation(fields: [teacherId], references: [id])
+  date      DateTime
+  status    String   @default("PENDING")
+}
