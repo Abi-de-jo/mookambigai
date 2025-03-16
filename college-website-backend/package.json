@@ -21,6 +21,10 @@
     "express": "^4.21.2",
     "nodemailer": "^6.10.0",
     "prisma": "^6.5.0",
-    "twilio": "^5.5.0"
+    "twilio": "^5.5.0",
+    "mongodb": "^5.1.0",
+    "bcrypt": "^5.1.0",
+    "jsonwebtoken": "^9.0.0"
+   
   }
 }
