@@ -20,8 +20,10 @@ app.use('/api/teachers', teacherRoutes);
 app.use('/api/hod', hodRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/appointments', appointmentRoutes);
-app.get("/test",()=>{
+app.get("/test",(req,res)=>{
+
     console.log("Testing conditions Okay....")
+    res.send("Testing...")
 })
 // const PORT = process.env.PORT || 5000;
 // app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
