@@ -16,7 +16,7 @@
   "dependencies": {
     "@prisma/client": "^6.5.0",
     "bcrypt": "^5.1.0",
-     "cors": "^2.8.5",
+    "cors": "^2.8.5",
     "date-fns": "^4.1.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
@@ -24,6 +24,7 @@
     "mongodb": "^5.9.2",
     "nodemailer": "^6.10.0",
     "prisma": "^6.5.0",
-    "twilio": "^5.5.0"
+    "twilio": "^5.5.0",
+    "xmlbuilder": "^15.1.1"
   }
 }
